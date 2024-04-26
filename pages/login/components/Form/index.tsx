@@ -25,6 +25,7 @@ export function Form() {
           <InputText 
             hasError={!!errors.email}
             props={{
+              placeholder: "Digite seu e-mail",
               onBlur: onBlur,
               onChangeText: onChange,
               value
@@ -40,6 +41,7 @@ export function Form() {
           <InputText 
             hasError={!!errors.password}
             props={{
+              placeholder: "Digite sua senha",
               onChangeText: onChange,
               onBlur,
               value,
