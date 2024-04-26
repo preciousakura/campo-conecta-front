@@ -1,8 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { Form } from './components';
 
-export function Login() {
+export function Register() {
   return (
     <View style={styles.container}>
       <Animatable.Image 
@@ -11,7 +10,6 @@ export function Login() {
         style={{ width: '60%', marginBottom: 40 }}
         resizeMode='contain'
       />
-      <Form />
       <View style={styles.circle}></View>
     </View>
   );

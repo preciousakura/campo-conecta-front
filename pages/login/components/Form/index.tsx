@@ -3,6 +3,8 @@ import { Button, InputText, RegularText } from '../../../../components';
 import { useForm, Controller, SubmitHandler } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as zod from "zod"
+import { useNavigation } from '@react-navigation/native';
+import { AccountProps } from '../../../../routes/userLogin';
 
 const schema = zod.object({
   email: zod.string().email().min(1, { message: 'E-mail obrigatório' }),
@@ -15,6 +17,8 @@ export function Form() {
   const { control, handleSubmit, formState: { errors } } = useForm<LoginType>({ resolver: zodResolver(schema) });
 
   const onSubmit: SubmitHandler<LoginType> = (data: LoginType) => console.log(data);
+
+  const navigation = useNavigation<AccountProps>();
 
   return (
     <View style={styles.container}>
@@ -57,11 +61,17 @@ export function Form() {
           marginTop: 20,
           textDecorationLine: 'underline'
         }} 
+        props={{
+          onPress: () => navigation.navigate('Register')
+        }}
         text='Não tem conta? Cadastre-se' 
       />
 
       <Button 
-        onPress={handleSubmit(onSubmit)}
+        props={{
+          title: 'Entrar',
+          onPress: handleSubmit(onSubmit)
+        }}
         buttonStyle={{ width: '70%', marginTop: 30 }} 
         title='Entrar' />
         

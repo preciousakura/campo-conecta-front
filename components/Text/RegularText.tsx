@@ -1,13 +1,13 @@
-import { GestureResponderEvent, StyleSheet, Text, TextStyle } from 'react-native';
+import { GestureResponderEvent, StyleSheet, Text, TextProps, TextStyle } from 'react-native';
 
 type RegularTextProps = {
     text: string;
     style?: TextStyle;
-    onPress?: ((event: GestureResponderEvent) => void) | undefined
+    props?: TextProps;
 }
 
-export function RegularText({ text, style, onPress }: RegularTextProps) {
-  return <Text onPress={onPress} style={{ ...styles.text, ...style }}>{text}</Text>
+export function RegularText({ text, style, props }: RegularTextProps) {
+  return <Text {...props} style={{ ...styles.text, ...style }}>{text}</Text>
 }
 
 const styles = StyleSheet.create({

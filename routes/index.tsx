@@ -1,12 +1,16 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Login  from "../pages/login";
+import AccountNavigator from './userLogin';
 
-const Stack = createNativeStackNavigator();
+const Navigation = createNativeStackNavigator();
 
 export default function Routes() {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        </Stack.Navigator>
+        <Navigation.Navigator>
+            <Navigation.Screen
+                name="Account"
+                component={AccountNavigator}
+                options={{ headerShown: false }}
+            />
+        </Navigation.Navigator>
     );
 }
