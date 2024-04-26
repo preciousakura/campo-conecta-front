@@ -1,15 +1,12 @@
-import { StyleSheet, View, Text, TextInput, TextInputFocusEventData, NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TextInputFocusEventData, NativeSyntheticEvent, TextInputChangeEventData, TextInputProps } from 'react-native';
 
-type InputTextProps = {
-    title: string;
-    placeholder?: string;
-    value?: string
-    onChange?: ((e: NativeSyntheticEvent<TextInputChangeEventData>) => void) | undefined
-    onBlur?: ((e: NativeSyntheticEvent<TextInputFocusEventData>) => void) | undefined
-    hasError?: boolean;
+type InputTextProps =  & {
+  title: string;
+  hasError?: boolean;
+  props: TextInputProps
 }
 
-export function InputText({ title, placeholder, onChange, onBlur, value, hasError = false }: InputTextProps) {
+export function InputText({ title, props, hasError = false }: InputTextProps) {
   return (
     <View style={styles.container}>
         <Text style={styles.text}>{title}</Text>
@@ -17,11 +14,7 @@ export function InputText({ title, placeholder, onChange, onBlur, value, hasErro
           style={{ 
             ...styles.input, 
             ...{ borderColor: hasError ? 'red' : 'transparent' } }} 
-          placeholder={placeholder} 
-          value={value} 
-          onChange={onChange}
-          onBlur={onBlur}
-          
+          {...props}
         />
     </View>
   );

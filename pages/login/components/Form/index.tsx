@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import * as zod from "zod"
 
 const schema = zod.object({
-  email: zod.string().min(1, { message: 'E-mail obrigatório' }),
+  email: zod.string().email().min(1, { message: 'E-mail obrigatório' }),
   password: zod.string().min(1, { message: 'Senha obrigatória' }),
 })
 
@@ -24,9 +24,11 @@ export function Form() {
         render={({ field: { onChange, onBlur, value } }) => (
           <InputText 
             hasError={!!errors.email}
-            onBlur={onBlur} 
-            onChange={onChange} 
-            value={value} 
+            props={{
+              onBlur: onBlur,
+              onChangeText: onChange,
+              value
+            }}
             title='Email' 
           />
       )}/>
@@ -37,9 +39,12 @@ export function Form() {
         render={({ field: { onChange, onBlur, value } }) => (
           <InputText 
             hasError={!!errors.password}
-            onBlur={onBlur} 
-            onChange={onChange} 
-            value={value} 
+            props={{
+              onChangeText: onChange,
+              onBlur,
+              value,
+              secureTextEntry: true
+            }}
             title='Password' 
           />
         )}/>
