@@ -10,6 +10,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded] = Font.useFonts({
     'MontserratRegular': require('./assets/fonts/Montserrat-Regular.ttf'),
+    'MontserratSemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
     'MontserratBold': require('./assets/fonts/Montserrat-Bold.ttf'),
   });
 

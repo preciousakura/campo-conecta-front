@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
     fontFamily: 'MontserratBold'
   },
   input: {
+    fontFamily: 'MontserratSemiBold',
     backgroundColor: 'white',
     padding: 16,
     width: '100%',
-    fontFamily: 'MontserratRegular',
     fontSize: 12,
     borderRadius: 10,
     borderWidth: 1

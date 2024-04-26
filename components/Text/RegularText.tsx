@@ -13,6 +13,6 @@ export function RegularText({ text, style, onPress }: RegularTextProps) {
 const styles = StyleSheet.create({
   text: {
     color: 'white',
-    fontFamily: 'MontserratRegular',
+    fontFamily: 'MontserratSemiBold',
   },
 });

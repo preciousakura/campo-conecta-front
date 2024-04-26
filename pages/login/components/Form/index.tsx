@@ -60,7 +60,7 @@ export function Form() {
 
       <Button 
         onPress={handleSubmit(onSubmit)}
-        buttonStyle={{ width: '60%', marginTop: 30 }} 
+        buttonStyle={{ width: '70%', marginTop: 30 }} 
         title='Entrar' />
         
       <RegularText 
