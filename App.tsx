@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from './routes';
+import { StatusBar } from 'react-native';
+import { useCallback } from 'react';
+import * as SplashScreen from 'expo-splash-screen';
+import * as Font from 'expo-font';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [fontsLoaded, fontError] = Font.useFonts({
+    'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
+    'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+  });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  const onLayoutRootView = useCallback(async () => {
+    if(fontError || fontError)
+      await SplashScreen.hideAsync();
+  }, [fontsLoaded, fontError]);
+
+  if(!fontsLoaded && !fontError)
+    return null;
+
+  return (
+    <NavigationContainer onReady={onLayoutRootView}>
+      <StatusBar backgroundColor="#8F9F2C" barStyle="light-content" />
+      <Routes />
+    </NavigationContainer>
+  );
+};
