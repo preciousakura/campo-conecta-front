@@ -8,17 +8,17 @@ import * as Font from 'expo-font';
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [fontsLoaded, fontError] = Font.useFonts({
-    'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
-    'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+  const [fontsLoaded] = Font.useFonts({
+    'MontserratRegular': require('./assets/fonts/Montserrat-Regular.ttf'),
+    'MontserratBold': require('./assets/fonts/Montserrat-Bold.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
-    if(fontError || fontError)
+    if(fontsLoaded)
       await SplashScreen.hideAsync();
-  }, [fontsLoaded, fontError]);
+  }, [fontsLoaded]);
 
-  if(!fontsLoaded && !fontError)
+  if(!fontsLoaded)
     return null;
 
   return (

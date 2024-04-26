@@ -5,14 +5,14 @@ import { Form } from './components';
 export default function Login() {
   return (
     <View style={styles.container}>
-        <Animatable.Image 
-            animation="flipInY"
-            source={ require('../../assets/logo-gray.svg') }
-            style={{ width: '60%' }}
-            resizeMode='contain'
-        />
-        <Form />
-        <View style={styles.circle}></View>
+      <Animatable.Image 
+        animation="flipInY"
+        source={ require('../../assets/logo-gray.png') }
+        style={{ width: '60%', marginBottom: 40 }}
+        resizeMode='contain'
+      />
+      <Form />
+      <View style={styles.circle}></View>
     </View>
   );
 }
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#AAB438',
     borderRadius: 1000, 
     position: 'absolute', 
-    bottom: -250, 
+    bottom: -280, 
     zIndex: -1
   },
 });

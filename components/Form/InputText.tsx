@@ -33,17 +33,17 @@ const styles = StyleSheet.create({
   },
   text: {
     marginBottom: 10,
+    marginTop: 15,
     color: 'white',
-    fontFamily: 'Montserrat-Bold'
+    fontFamily: 'MontserratBold'
   },
   input: {
     backgroundColor: 'white',
     padding: 16,
     width: '100%',
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'MontserratRegular',
     fontSize: 12,
     borderRadius: 10,
-    outlineStyle: 'none',
     borderWidth: 1
   }
 });

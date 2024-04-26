@@ -18,33 +18,31 @@ export function Form() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.field}>
-        <Controller 
-          name='email'
-          control={control} 
-          render={({ field: { onChange, onBlur, value } }) => (
-            <InputText 
-              hasError={!!errors.email}
-              onBlur={onBlur} 
-              onChange={onChange} 
-              value={value} 
-              title='Email' 
-            />
-        )}/>
+      <Controller 
+        name='email'
+        control={control} 
+        render={({ field: { onChange, onBlur, value } }) => (
+          <InputText 
+            hasError={!!errors.email}
+            onBlur={onBlur} 
+            onChange={onChange} 
+            value={value} 
+            title='Email' 
+          />
+      )}/>
 
-        <Controller 
-          name='password'
-          control={control} 
-          render={({ field: { onChange, onBlur, value } }) => (
-            <InputText 
-              hasError={!!errors.password}
-              onBlur={onBlur} 
-              onChange={onChange} 
-              value={value} 
-              title='Password' 
-            />
-          )}/>
-      </View>
+      <Controller 
+        name='password'
+        control={control} 
+        render={({ field: { onChange, onBlur, value } }) => (
+          <InputText 
+            hasError={!!errors.password}
+            onBlur={onBlur} 
+            onChange={onChange} 
+            value={value} 
+            title='Password' 
+          />
+        )}/>
 
       <RegularText 
         style={{    
@@ -57,7 +55,7 @@ export function Form() {
 
       <Button 
         onPress={handleSubmit(onSubmit)}
-        buttonStyle={{ width: '60%', marginTop: 40 }} 
+        buttonStyle={{ width: '60%', marginTop: 30 }} 
         title='Entrar' />
         
       <RegularText 
