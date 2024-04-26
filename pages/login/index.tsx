@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#AAB438',
     borderRadius: 1000, 
     position: 'absolute', 
-    bottom: -280, 
+    top: '68%', 
     zIndex: -1
   },
 });

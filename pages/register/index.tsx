@@ -1,15 +1,12 @@
 import { StyleSheet, View } from 'react-native';
-import * as Animatable from 'react-native-animatable';
+import { RegularText } from '../../components';
+import { Form } from './components';
 
 export function Register() {
   return (
     <View style={styles.container}>
-      <Animatable.Image 
-        animation="flipInY"
-        source={ require('../../assets/logo-gray.png') }
-        style={{ width: '60%', marginBottom: 40 }}
-        resizeMode='contain'
-      />
+      <RegularText text="Criar conta" style={{ fontSize: 25 }} />
+      <Form />
       <View style={styles.circle}></View>
     </View>
   );
@@ -28,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#AAB438',
     borderRadius: 1000, 
     position: 'absolute', 
-    bottom: -280, 
+    top: '68%', 
     zIndex: -1
   },
 });
