@@ -13,7 +13,9 @@ export function Content({ children, style, decoration = false, contentStyle }: C
        <View style={{...styles.container, ...style, }}>
             <SafeAreaView style={{ width: '100%', zIndex: 10, flex: 1 }}>
                 <ScrollView style={{ ...styles.content, ...contentStyle }}>
-                    {children}
+                    <View style={{ marginVertical: 40 }}>
+                        {children}
+                    </View>
                 </ScrollView>
             </SafeAreaView>
             {decoration && <View style={styles.square}></View>}
@@ -31,7 +33,6 @@ const styles = StyleSheet.create({
         borderTopStartRadius: 70,
     },
     content: {
-        marginTop: 40,
         marginBottom: 10,
         paddingHorizontal: 35,
         zIndex: 1,
