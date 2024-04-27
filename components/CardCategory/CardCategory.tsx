@@ -1,5 +1,4 @@
 import { StyleSheet, View, Text, Image, ImageSourcePropType, ViewStyle, TouchableOpacity, } from 'react-native';
-import { OrderProps } from '../../routes/order';
 import { useNavigation } from '@react-navigation/native';
 
 export type CardCategoryProps = & {
@@ -9,10 +8,13 @@ export type CardCategoryProps = & {
 }
 
 export function CardCategory({ imageUri, title, style }: CardCategoryProps) {
-  const navigation = useNavigation<OrderProps>();
+  const navigation = useNavigation<any>();
 
   return (
-    <TouchableOpacity style={{ ...style, flex: 1 }} onPress={() => navigation.navigate('Suppliers', { title: title })}>
+    <TouchableOpacity style={{ ...style, flex: 1 }} onPress={() => navigation.navigate('Order', {
+      screen: 'Suppliers',
+      params: { title: title }
+    })}>
       <View style={styles.card }>
         <Image source={imageUri} style={styles.image} />
       </View>

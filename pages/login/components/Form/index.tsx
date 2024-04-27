@@ -4,7 +4,6 @@ import { useForm, Controller, SubmitHandler } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as zod from "zod"
 import { useNavigation } from '@react-navigation/native';
-import { AccountProps } from '../../../../routes/account';
 import { fetcher } from '../../../../lib/auth';
 
 const schema = zod.object({
@@ -16,18 +15,23 @@ export type LoginType = zod.infer<typeof schema>;
 
 export function Form() {  
   const { control, handleSubmit, formState: { errors } } = useForm<LoginType>({ resolver: zodResolver(schema) });
+  const navigation = useNavigation<any>();
 
   const onSubmit: SubmitHandler<LoginType> = async (data: LoginType) => {
-    const formData = new FormData();
-    Object.keys(data).forEach(key => formData.append(key, data[key as keyof typeof data]));
-    const response = await fetcher('/auth/signin', 
-      { 
-        method: 'POST', 
-        body: formData
-      });
-  }
+    // const formData = new FormData();
+    // Object.keys(data).forEach(key => formData.append(key, data[key as keyof typeof data]));
+    // const response = await fetcher('/auth/signin', 
+    //   { 
+    //     method: 'POST', 
+    //     body: formData
+    //   });
 
-  const navigation = useNavigation<AccountProps>();
+    if (data.username === 'b@gmail.com' && data.password === '1234') {
+      navigation.navigate('User', {
+        screen: 'Home'
+      })
+    }
+  }
 
   return (
     <View style={styles.container}>

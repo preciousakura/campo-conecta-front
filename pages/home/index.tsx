@@ -1,18 +1,21 @@
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
-import { CardCategory, CardsCarousel, Column, FilterItem, ProductCard, RegularText, Search, TagsCarousel } from '../../components';
-import { useState } from 'react';
+import { CardCategory, CardsCarousel, Column, RegularText, Search, TagsCarousel } from '../../components';
 import { Avatar, SandwichMenu } from './components';
 import { productsList } from './data';
+import { useNavigation } from '@react-navigation/native';
 
 
 export function Home() {
+  const navigation = useNavigation<any>();
 
   return (
     <View style={styles.container}>
       <SafeAreaView>
         <View style={{ paddingHorizontal: 35 }}>
           <Column style={{ paddingVertical: 20 }}>
-            <SandwichMenu />
+            <SandwichMenu onPress={() => navigation.navigate('User', {
+              screen: 'MyOrders'
+            })} />
             <Avatar imageUrl={"https://inteligenciafinanceira.com.br/wp-content/uploads/2023/11/Taylor_Swift_eras.webp"}/>
           </Column>
         </View>

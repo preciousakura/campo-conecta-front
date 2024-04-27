@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import { BackButton, Content, FilterItem, RegularText, Search } from '../../components';
+import { BackButton, Content, FilterItem, RegularText, Search, TagsCarousel } from '../../components';
 import { OrderItem } from './components';
 import { useState } from 'react';
 
@@ -8,14 +8,11 @@ export function MyOrders() {
   return (
     <View style={styles.container}>
         <BackButton title="Meus pedidos" />
-        <View style={{ paddingHorizontal: 35 }}>
+        <View style={{ paddingHorizontal: 35, width: '100%' }}>
           <Search props={{ placeholder: 'Pesquisar todos os pedidos' }} />
         </View>
-        <View style={{ flexDirection: 'row', width: '100%', gap: 6, paddingHorizontal: 35, paddingVertical: 20 }}>
-            <FilterItem isSelected={frequency == 'Todos'} title='Todos' onPress={() => setFrenquency('Todos')} />
-            <FilterItem isSelected={frequency == '3 meses'} title='3 meses' onPress={() => setFrenquency('3 meses')} />
-            <FilterItem isSelected={frequency == '6 meses'} title='6 meses' onPress={() => setFrenquency('6 meses')} />
-            <FilterItem isSelected={frequency == '1 ano'} title='1 ano' onPress={() => setFrenquency('1 ano')} />
+        <View style={{ flex: 1 }}>
+          <TagsCarousel style={{ marginVertical: 20 }} titles={['Todos', '3 meses', '6 meses', '1 ano']} /> 
         </View>
         <Content>
           <View style={{ gap: 20 }}>

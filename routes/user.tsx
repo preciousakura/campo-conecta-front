@@ -3,6 +3,7 @@ import { Home, MyOrders } from "../pages";
 
 type UserParamList = {
     Home: undefined;
+    MyOrders: undefined;
 }
 
 export type UserProps = NativeStackNavigationProp<UserParamList>;
@@ -15,6 +16,11 @@ export default function UserNavigator() {
       <User.Screen
         name="Home"
         component={Home}
+        options={{ headerShown: false }}
+      />
+      <User.Screen
+        name="MyOrders"
+        component={MyOrders}
         options={{ headerShown: false }}
       />
     </User.Navigator>

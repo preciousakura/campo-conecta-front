@@ -5,7 +5,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import * as zod from "zod"
 import { fetcher } from '../../../../lib/auth';
 import { useNavigation } from '@react-navigation/native';
-import { AccountProps } from '../../../../routes/account';
 
 const schema = zod.object({
   name: zod.string().min(1),
@@ -17,18 +16,22 @@ const schema = zod.object({
 export type RegisterType = zod.infer<typeof schema>;
 
 export function Form() {  
-  const navigation = useNavigation<AccountProps>();
+  const navigation = useNavigation<any>();
 
   const { control, handleSubmit, formState: { errors, isSubmitting } } = useForm<RegisterType>({ resolver: zodResolver(schema) });
 
   const onSubmit: SubmitHandler<RegisterType> = async (data: RegisterType) => {
-    const response = await fetcher('/auth/signup', { 
-      method: 'POST', 
-      headers: {
-        "content-type": "application/json"
-      }, 
-      body: JSON.stringify(data) 
-    });
+    // const response = await fetcher('/auth/signup', { 
+    //   method: 'POST', 
+    //   headers: {
+    //     "content-type": "application/json"
+    //   }, 
+    //   body: JSON.stringify(data) 
+    // });
+
+    navigation.navigate('User', {
+      screen: 'Home'
+    })
   }
 
   return (
