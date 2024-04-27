@@ -1,9 +1,11 @@
 import { NativeStackNavigationProp, createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Order as OrderComponent, Payment } from "../pages";
+import { Product, Payment, Supplier } from "../pages";
+import { Product as ProductType } from "../types/product";
 
-type OrderParamList = {
-    Order: undefined;
-    Payment: undefined
+export type OrderParamList = {
+    Product: { product: ProductType };
+    Payment: undefined;
+    Supplier: undefined;
 }
 
 export type OrderProps = NativeStackNavigationProp<OrderParamList>;
@@ -12,10 +14,15 @@ const Order = createNativeStackNavigator<OrderParamList>();
 
 export default function OrderNavigator() {
   return (
-    <Order.Navigator initialRouteName="Order">
+    <Order.Navigator initialRouteName="Supplier">
       <Order.Screen
-        name="Order"
-        component={OrderComponent}
+        name="Supplier"
+        component={Supplier}
+        options={{ headerShown: false }}
+      />
+      <Order.Screen
+        name="Product"
+        component={Product}
         options={{ headerShown: false }}
       />
       <Order.Screen

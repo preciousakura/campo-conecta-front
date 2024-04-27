@@ -8,13 +8,13 @@ export default function Routes() {
     return (
         <Navigation.Navigator>
             <Navigation.Screen
-                name="Account"
-                component={AccountNavigator}
+                name="Order"
+                component={OrderNavigator}
                 options={{ headerShown: false }}
             />
             <Navigation.Screen
-                name="Order"
-                component={OrderNavigator}
+                name="Account"
+                component={AccountNavigator}
                 options={{ headerShown: false }}
             />
         </Navigation.Navigator>

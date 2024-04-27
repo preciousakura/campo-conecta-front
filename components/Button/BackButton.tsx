@@ -16,8 +16,8 @@ export function BackButton({ title, titleStyle, props, isLoading = false }: Back
     return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <TouchableOpacity disabled={isLoading} onPress={navigation.goBack} {...props}>
-            <Icon.Button name="arrow-back-ios" size={25} style={{ padding: 0 }} backgroundColor="transparent" />
+        <TouchableOpacity disabled={isLoading} onPress={() => navigation.goBack()} {...props}>
+            <Icon name="arrow-back-ios" size={25} style={{ padding: 0, color: 'white' }} />
         </TouchableOpacity>
         <RegularText text={title} style={{ ...titleStyle, fontSize: 25, fontFamily: 'MontserratBold' }} />
       </View>

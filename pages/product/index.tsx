@@ -1,14 +1,19 @@
 import { StyleSheet, View, Image } from 'react-native';
 import { BackButton, Button, Column, Content, RegularText, Stars } from '../../components';
+import { RouteProp, useRoute } from '@react-navigation/native';
+import { OrderParamList } from '../../routes/order';
 
-export function Order() {
+export function Product() {
+  const route = useRoute<RouteProp<OrderParamList, 'Product'>>();
+  const { product } = route.params;
+  
   return (
     <View style={styles.container}>
         <BackButton title="Empacota e vai" />
         <Content>
             <Column>
                 <RegularText 
-                    text='Caixas de papel' 
+                    text={product.name}
                     style={{ color:'#819601', fontFamily: 'MontserratBold', fontSize: 22 }} 
                 /> 
                 <Stars stars={2} />
