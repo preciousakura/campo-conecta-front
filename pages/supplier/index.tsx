@@ -1,5 +1,5 @@
-import { StyleSheet, View, Image } from 'react-native';
-import { BackButton, Column, Content, ItemProduct, RegularText, Stars } from '../../components';
+import { StyleSheet, View, Image, ScrollView } from 'react-native';
+import { BackButton, Column, Content, ItemProduct, ProductCard, RegularText, Stars } from '../../components';
 import { Product } from '../../types/product';
 import { Supplier as SupplierType } from '../../types/supplier';
 
@@ -20,8 +20,8 @@ export function Supplier() {
   return (
     <View style={styles.container}>
         <BackButton title="Fornecedores" />
-        <Content decoration>
-            <Column>
+        <Content contentStyle={{ marginVertical: 0, paddingHorizontal: 0 }} decoration>
+            <Column style={{ marginTop: 40, paddingHorizontal: 35 }}>
                 <Image 
                     source={require('../../assets/images/empacota-e-vai.png')} 
                     resizeMode='contain'
@@ -46,33 +46,47 @@ export function Supplier() {
             </Column>
             <RegularText 
                 text='Somos uma loja atuante no mercado há 30 anos, vencendo o prêmio de melhor caixas 2021 pela Associação Caixistas.' 
-                style={{ color:'#8E8E8E', textAlign: 'justify', fontFamily: 'MontserratSemiBold', fontSize: 13, marginTop: 5 }} 
+                style={{ color:'#8E8E8E', textAlign: 'justify', fontFamily: 'MontserratSemiBold', fontSize: 13, marginTop: 5, paddingHorizontal: 35 }} 
             /> 
             <RegularText 
                 text='Nosso compromisso é oferecer aos nossos clientes as melhores soluções em embalagens e caixas para os...' 
-                style={{ color:'#8E8E8E', textAlign: 'justify', fontFamily: 'MontserratSemiBold', fontSize: 13, marginTop: 5 }} 
+                style={{ color:'#8E8E8E', textAlign: 'justify', fontFamily: 'MontserratSemiBold', fontSize: 13, marginTop: 5, paddingHorizontal: 35 }} 
             /> 
             <RegularText 
                 text='Ver mais detalhes' 
-                style={{ color:'#EBA416', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 13, marginTop: 20 }} 
+                style={{ color:'#EBA416', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 13, marginTop: 20, paddingHorizontal: 35 }} 
             /> 
 
-            <RegularText 
-                text='ITENS MAIS PEDIDOS' 
-                style={{ color:'#A1BA05', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 15, marginTop: 20 }} 
-            /> 
+            <View style={{ position: 'relative', flex: 1, borderTopEndRadius: 70, borderTopStartRadius: 70, }}>
+                <RegularText 
+                    text='ITENS MAIS PEDIDOS' 
+                    style={{ color:'#A1BA05', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 15, marginTop: 20, paddingHorizontal: 35 }} 
+                /> 
 
-            <View style={{ height: 100 }} />
+                <View style={{ marginTop: 20, paddingHorizontal: 35 }}>
+                    <ScrollView 
+                    horizontal 
+                    style={{ width: '100%', overflow: 'visible' }} 
+                    contentContainerStyle={{ flexDirection: 'row', gap: 20 }}>
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+                    </ScrollView>
+                </View>
 
-            <RegularText 
-                text='CATÁLOGO COMPLETO' 
-                style={{ color:'#FFF', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 15, marginTop: 20 }} 
-            /> 
+                <RegularText 
+                    text='CATÁLOGO COMPLETO' 
+                    style={{ color:'#FFF', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 15, marginTop: 20, paddingHorizontal: 35 }} 
+                /> 
 
-            <View style={{ gap: 10, marginTop: 20 }}>
-                {items.map(item => (
-                    <ItemProduct key={item.id} product={item}/>
-                ))}
+                <View style={{ gap: 10, marginVertical: 20, paddingHorizontal: 35 }}>
+                    {items.map(item => (
+                        <ItemProduct key={item.id} product={item}/>
+                    ))}
+                </View>
+                <View style={styles.square}></View>
             </View>
         </Content>
     </View >
@@ -85,5 +99,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#819601',
     alignItems: 'center',
     justifyContent: 'center',
-  }
+  },
+  square: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: '#E9A318',
+    borderTopEndRadius: 70,
+    borderTopStartRadius: 70,
+    position: 'absolute', 
+    top: "10%", 
+    zIndex: -1
+},
 });

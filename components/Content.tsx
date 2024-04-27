@@ -4,14 +4,15 @@ import { View, StyleSheet, ViewStyle, SafeAreaView, ScrollView } from "react-nat
 type ContentProps = {
     children: ReactNode;
     style?: ViewStyle;
+    contentStyle?: ViewStyle;
     decoration?: boolean;
 }
 
-export function Content({ children, style, decoration = false }: ContentProps) {
+export function Content({ children, style, decoration = false, contentStyle }: ContentProps) {
     return (
-       <View style={{...style, ...styles.container}}>
-            <SafeAreaView style={{ width: '100%', zIndex: 10 }}>
-                <ScrollView style={styles.content}>
+       <View style={{...styles.container, ...style, }}>
+            <SafeAreaView style={{ width: '100%', zIndex: 10, flex: 1 }}>
+                <ScrollView style={{ ...styles.content, ...contentStyle }}>
                     {children}
                 </ScrollView>
             </SafeAreaView>
@@ -32,7 +33,9 @@ const styles = StyleSheet.create({
     content: {
         marginVertical: 40,
         paddingHorizontal: 35,
-        zIndex: 1
+        zIndex: 1,
+        borderTopEndRadius: 70, 
+        borderTopStartRadius: 70, 
     },
     square: {
         width: "100%",
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
         borderTopEndRadius: 70,
         borderTopStartRadius: 70,
         position: 'absolute', 
-        top: '55%', 
+        top: '90%', 
         zIndex: 0
     },
 })

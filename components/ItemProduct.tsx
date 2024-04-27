@@ -28,8 +28,10 @@ export function ItemProduct({ product }: ItemProductProps) {
                     /> 
                 </View>
             </View>
-            <View 
-                style={{ width: 60, height: 60, backgroundColor: 'brown' }}
+            <Image 
+                source={require('../assets/images/bottle.jpg')} 
+                resizeMode='contain'
+                style={{ width: 70, height: 70 }}
             />
        </TouchableOpacity>
     )
