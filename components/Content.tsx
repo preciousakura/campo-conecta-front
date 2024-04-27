@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         borderTopStartRadius: 70,
     },
     content: {
-        marginTop: 40,
+        marginVertical: 40,
         paddingHorizontal: 35,
         zIndex: 1
     },
