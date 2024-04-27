@@ -20,7 +20,7 @@ export function Home() {
         <RegularText text={'Quais os pedidos para hoje?'} style={styles.subtitle}/>
         </Column>
         <Column style={{paddingVertical:5}}>
-        <SearchBar placeholder={'Buscar'}  style={styles.searchBar} data={productsList}/>
+        <SearchBar placeholder={'Buscar'}  style={styles.searchBar}/>
         </Column>
         <Column >
         <TitleText  text={'Pedidos em aberto'} style={styles.titleText}/>
