@@ -1,5 +1,5 @@
-import { StyleSheet, View, Image } from 'react-native';
-import { BackButton, Column, Content, ItemProduct, RegularText, Stars } from '../../components';
+import { StyleSheet, View, Image, ScrollView } from 'react-native';
+import { BackButton, Column, Content, ItemProduct, ProductCard, RegularText, Stars } from '../../components';
 import { Product } from '../../types/product';
 import { Supplier as SupplierType } from '../../types/supplier';
 
@@ -62,7 +62,18 @@ export function Supplier() {
                 style={{ color:'#A1BA05', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 15, marginTop: 20 }} 
             /> 
 
-            <View style={{ height: 100 }} />
+            <View style={{ marginTop: 20 }}>
+                <ScrollView 
+                horizontal 
+                style={{ width: '100%', overflow: 'visible' }} 
+                contentContainerStyle={{ flexDirection: 'row', gap: 20 }}>
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                </ScrollView>
+            </View>
 
             <RegularText 
                 text='CATÁLOGO COMPLETO' 

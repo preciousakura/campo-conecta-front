@@ -9,7 +9,7 @@ type ContentProps = {
 
 export function Content({ children, style, decoration = false }: ContentProps) {
     return (
-       <View style={{...style, ...styles.container}}>
+       <View style={{...styles.container, ...style, }}>
             <SafeAreaView style={{ width: '100%', zIndex: 10, flex: 1 }}>
                 <ScrollView style={styles.content}>
                     {children}
