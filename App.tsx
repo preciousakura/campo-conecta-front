@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <NavigationContainer onReady={onLayoutRootView}>
-      <StatusBar backgroundColor="#8F9F2C" barStyle="light-content" />
+      <StatusBar backgroundColor="#819601" barStyle="light-content" />
       <Routes />
     </NavigationContainer>
   );

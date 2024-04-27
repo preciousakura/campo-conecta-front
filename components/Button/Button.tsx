@@ -5,21 +5,22 @@ type ButtonProps = {
   titleStyle?: TextStyle;
   buttonStyle?: ViewStyle;
   props?: BtnProps;
+  isLoading?: boolean;
 }
 
-export function Button({ title, titleStyle, buttonStyle, props }: ButtonProps) {
+export function Button({ title, titleStyle, buttonStyle, props, isLoading = false }: ButtonProps) {
   return (
-    <TouchableOpacity {...props} style={{ ...styles.container, ...buttonStyle }}>
-        <Text style={{ ...styles.text, ...titleStyle }}>
-          {title}
-        </Text>
+    <TouchableOpacity disabled={isLoading} {...props} style={{ ...styles.container, ...buttonStyle, opacity: isLoading ? 0.6 : 1 }}>
+      <Text style={{ ...styles.text, ...titleStyle }}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#E8B44B',
+    backgroundColor: '#EBA416',
     borderRadius: 12,
     padding: 15,
   },

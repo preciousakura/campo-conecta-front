@@ -3,40 +3,74 @@ import { Button, InputText, RegularText } from '../../../../components';
 import { useForm, Controller, SubmitHandler } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as zod from "zod"
+import { fetcher } from '../../../../lib/auth';
 import { useNavigation } from '@react-navigation/native';
 import { AccountProps } from '../../../../routes/account';
-import { fetcher } from '../../../../lib/auth';
 
 const schema = zod.object({
-  username: zod.string().email().min(1, { message: 'E-mail obrigatório' }),
-  password: zod.string().min(1, { message: 'Senha obrigatória' }),
+  name: zod.string().min(1),
+  last_name: zod.string().min(1),
+  email: zod.string().email().min(1),
+  password: zod.string().min(1),
 })
 
-export type LoginType = zod.infer<typeof schema>;
+export type RegisterType = zod.infer<typeof schema>;
 
 export function Form() {  
-  const { control, handleSubmit, formState: { errors } } = useForm<LoginType>({ resolver: zodResolver(schema) });
-
-  const onSubmit: SubmitHandler<LoginType> = async (data: LoginType) => {
-    const formData = new FormData();
-    Object.keys(data).forEach(key => formData.append(key, data[key as keyof typeof data]));
-    const response = await fetcher('/auth/signin', 
-      { 
-        method: 'POST', 
-        body: formData
-      });
-  }
-
   const navigation = useNavigation<AccountProps>();
+
+  const { control, handleSubmit, formState: { errors, isSubmitting } } = useForm<RegisterType>({ resolver: zodResolver(schema) });
+
+  const onSubmit: SubmitHandler<RegisterType> = async (data: RegisterType) => {
+    const response = await fetcher('/auth/signup', { 
+      method: 'POST', 
+      headers: {
+        "content-type": "application/json"
+      }, 
+      body: JSON.stringify(data) 
+    });
+  }
 
   return (
     <View style={styles.container}>
       <Controller 
-        name='username'
+        name='name'
         control={control} 
         render={({ field: { onChange, onBlur, value } }) => (
           <InputText 
-            hasError={!!errors.username}
+            hasError={!!errors.name}
+            props={{
+              placeholder: "Digite seu nome",
+              onBlur: onBlur,
+              onChangeText: onChange,
+              value
+            }}
+            title='Nome' 
+          />
+      )}/>
+
+      <Controller 
+        name='last_name'
+        control={control} 
+        render={({ field: { onChange, onBlur, value } }) => (
+          <InputText 
+            hasError={!!errors.last_name}
+            props={{
+              placeholder: "Digite seu sobrenome",
+              onBlur: onBlur,
+              onChangeText: onChange,
+              value
+            }}
+            title='Sobrenome' 
+          />
+      )}/>
+
+      <Controller 
+        name='email'
+        control={control} 
+        render={({ field: { onChange, onBlur, value } }) => (
+          <InputText 
+            hasError={!!errors.email}
             props={{
               placeholder: "Digite seu e-mail",
               onBlur: onBlur,
@@ -64,33 +98,24 @@ export function Form() {
           />
         )}/>
 
-      <RegularText 
-        style={{    
-          marginBottom: 10,
-          marginTop: 20,
-          textDecorationLine: 'underline'
-        }} 
-        props={{
-          onPress: () => navigation.navigate('Register')
-        }}
-        text='Não tem conta? Cadastre-se' 
-      />
-
       <Button 
         props={{
-          title: 'Entrar',
+          title: 'Cadastrar',
           onPress: handleSubmit(onSubmit)
         }}
         buttonStyle={{ width: '70%', marginTop: 30 }} 
-        title='Entrar' />
-        
+        title='Cadastrar' />
+
       <RegularText 
         style={{    
           marginBottom: 10,
           marginTop: 20,
           textDecorationLine: 'underline'
         }} 
-        text='Esqueceu a senha?'
+        props={{
+          onPress: () => navigation.goBack()
+        }}
+        text='Já tenho uma conta' 
       />
     </View>
   );
