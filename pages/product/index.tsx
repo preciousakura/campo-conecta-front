@@ -1,13 +1,14 @@
 import { StyleSheet, View, Image } from 'react-native';
 import { BackButton, Button, Column, Content, RegularText, Stars } from '../../components';
-import { RouteProp, useRoute } from '@react-navigation/native';
-import { OrderParamList } from '../../routes/order';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
+import { OrderParamList, OrderProps } from '../../routes/order';
 
 export function Product() {
+  const navigation = useNavigation<OrderProps>();
   const route = useRoute<RouteProp<OrderParamList, 'Product'>>();
   const { product } = route.params;
   
-  return (
+  return ( 
     <View style={styles.container}>
         <BackButton title="Empacota e vai" />
         <Content >
@@ -99,7 +100,7 @@ export function Product() {
                     style={{ color:'#A1BA05', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 13, paddingVertical: 5 }} 
                 /> 
            </Column>
-           <Button title='Realizar pedido' buttonStyle={{ marginTop: 20 }} />
+           <Button onPress={() => navigation.navigate('Payment')} title='Realizar pedido' buttonStyle={{ marginTop: 20 }} />
         </Content>
     </View >
   );

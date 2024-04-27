@@ -6,11 +6,12 @@ type ButtonProps = {
   buttonStyle?: ViewStyle;
   props?: BtnProps;
   isLoading?: boolean;
+  onPress?: () => void
 }
 
-export function Button({ title, titleStyle, buttonStyle, props, isLoading = false }: ButtonProps) {
+export function Button({ title, titleStyle, buttonStyle, props, isLoading = false, onPress }: ButtonProps) {
   return (
-    <TouchableOpacity disabled={isLoading} {...props} style={{ ...styles.container, ...buttonStyle, opacity: isLoading ? 0.6 : 1 }}>
+    <TouchableOpacity onPress={onPress} disabled={isLoading} {...props} style={{ ...styles.container, ...buttonStyle, opacity: isLoading ? 0.6 : 1 }}>
       <Text style={{ ...styles.text, ...titleStyle }}>
         {title}
       </Text>
