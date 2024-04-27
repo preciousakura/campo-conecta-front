@@ -15,14 +15,11 @@ const styles = StyleSheet.create({
 	container: {
     flexDirection: 'row',
     alignItems: 'center',
-    top: '6%',
-    left: '11%',
     paddingHorizontal:15
 	},
 	avatar: {
 		width: 50,
 		height: 50,
 		borderRadius: 25,
-		marginRight: 10
 	}
 });

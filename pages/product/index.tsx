@@ -10,7 +10,7 @@ export function Product() {
   return (
     <View style={styles.container}>
         <BackButton title="Empacota e vai" />
-        <Content>
+        <Content >
             <Column>
                 <RegularText 
                     text={product.name}

@@ -8,7 +8,7 @@ type CardsCarouselProps = & {
 export function CardsCarousel({ products, style }: CardsCarouselProps) {
   return (
     <View style={[styles.container, style]}>
-      <ScrollView horizontal contentContainerStyle={styles.scrollContent}>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
       {products.map((product, index) => (
         <CardProduct
           key={index} 
@@ -22,11 +22,10 @@ export function CardsCarousel({ products, style }: CardsCarouselProps) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+
   },
   scrollContent:{
-    paddingLeft: 10,
-    paddingRight: 270,
+
   }
 })
 

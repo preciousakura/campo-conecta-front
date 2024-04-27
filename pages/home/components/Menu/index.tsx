@@ -6,16 +6,8 @@ type SandwichMenuProps =  & {
 }
 export function SandwichMenu({ onPress } : SandwichMenuProps) {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity onPress={onPress} >
       <Ionicons name="menu" size={40} color="white" />
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    top: '6%',
-    right: '38%',
-    padding: 10,
-  },
-});

@@ -19,7 +19,7 @@ export function Tag({ title, onPress, selected }: TagProps) {
 const styles = StyleSheet.create({
   tag: {
     borderRadius: 20,
-    paddingHorizontal: 1,
+    paddingHorizontal: 8,
     paddingVertical: 6,
     marginRight: 12,
   },

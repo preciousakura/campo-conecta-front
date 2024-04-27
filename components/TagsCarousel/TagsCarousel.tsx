@@ -4,7 +4,7 @@ import { Tag } from "../Tag/Tag";
 
 type TagsCarouselProps = & {
   titles: string[];
-  style: ViewStyle
+  style ?: ViewStyle
 }
 export function TagsCarousel({ titles, style  }: TagsCarouselProps) {
 
@@ -35,7 +35,7 @@ export function TagsCarousel({ titles, style  }: TagsCarouselProps) {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
+   
   },
 
 });

@@ -15,7 +15,7 @@ export const productsList: CardProductProps[] = [
     title: 'GARRAFAS DE VIDRO',
     qtd_pedido: 3,
     value: 5,
-    days: 12,
+    days: 8,
     onPress: () => {}, 
     style: {}, 
   },

@@ -25,15 +25,13 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: 10,
     padding: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 10,
+   marginBottom: 10,
     backgroundColor: '#EBA416',
     marginHorizontal: 10
   },
   image: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     marginBottom: 10,
     resizeMode: 'contain',
   },
