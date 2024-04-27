@@ -4,16 +4,19 @@ import { View, StyleSheet, ViewStyle, SafeAreaView, ScrollView } from "react-nat
 type ContentProps = {
     children: ReactNode;
     style?: ViewStyle;
+    contentStyle?: ViewStyle;
     decoration?: boolean;
     childScreen?: string;
 }
 
-export function Content({ children, style, decoration = false,childScreen }: ContentProps) {
+export function Content({ children, style, decoration = false,childScreen, contentStyle }: ContentProps) {
     return (
        <View style={{...style, ...styles.container, backgroundColor:childScreen == 'home' ? '#819601' : 'white'}}>
             <SafeAreaView style={{ width: '100%', zIndex: 10, flex: 1 }}>
-                <ScrollView style={styles.content}>
-                    {children}
+                <ScrollView style={{ ...styles.content, ...contentStyle }}>
+                    <View style={{ marginVertical: 40 }}>
+                        {children}
+                    </View>
                 </ScrollView>
             </SafeAreaView>
             {decoration && <View style={childScreen == 'home' ? styles.cicle : styles.square}></View>}
@@ -29,9 +32,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
       },
     content: {
-        marginVertical: 40,
+        marginBottom: 10,
         paddingHorizontal: 35,
-        zIndex: 1
+        zIndex: 1,
+        borderTopEndRadius: 70,
+        borderTopStartRadius: 70,
     },
     square: {
         width: "100%",
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
         borderTopEndRadius: 70,
         borderTopStartRadius: 70,
         position: 'absolute', 
-        top: '55%', 
+        top: '70%', 
         zIndex: 0
     },
     cicle: {
