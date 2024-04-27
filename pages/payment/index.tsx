@@ -9,7 +9,7 @@ export function Payment() {
         <Content>
             <Column>
                 <RegularText 
-                    text='Caixas de papel' 
+                    text='CAIXAS DE PAPELÃO' 
                     style={{ color:'#819601', fontFamily: 'MontserratBold', fontSize: 22 }} 
                 /> 
                 <Stars stars={2} />

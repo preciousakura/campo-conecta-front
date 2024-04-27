@@ -7,7 +7,7 @@ export function OrderItem() {
         <View style={{ justifyContent: 'space-between', width: '60%' }}>
             <View style={{ gap: 2 }}>
                 <RegularText 
-                    text="CAIXAS DE PAPEL"
+                    text="CAIXAS DE PAPELÃO"
                     style={{ 
                         color: '#6F6F6F', 
                         fontFamily: 'MontserratBold', 

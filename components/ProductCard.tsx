@@ -9,7 +9,7 @@ export function ProductCard({ }: ProductCardProps) {
     return (
         <View style={styles.container}>
             <RegularText 
-                text="CAIXAS DE PAPEL"
+                text="CAIXAS DE PAPELÃO"
                 style={{ color: '#6F6F6F', fontFamily: 'MontserratBold', fontSize: 13, textTransform: 'uppercase' }} 
             /> 
             <Image 
@@ -39,6 +39,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         padding: 15,
         width: 220,
-        gap:10
+        gap:15
     },
 })

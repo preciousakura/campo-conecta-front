@@ -3,7 +3,7 @@ import { CardProductProps } from "../../components/CardProduct";
 export const productsList: CardProductProps[] = [
   {
     imageUri: require('../../assets/caixas.png'),
-    title: 'CAIXAS DE PAPEL',
+    title: 'CAIXAS DE PAPELÃO',
     qtd_pedido: 5,
     value: 1.50,
     days: 3,
