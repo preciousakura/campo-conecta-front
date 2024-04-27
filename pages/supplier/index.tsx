@@ -78,7 +78,7 @@ export function Supplier() {
 
                 <RegularText 
                     text='CATÁLOGO COMPLETO' 
-                    style={{ color:'#FFF', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 15, marginTop: 20, paddingHorizontal: 35 }} 
+                    style={{ color:'#FFF', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 15, marginVertical: 20, paddingHorizontal: 35 }} 
                 /> 
 
                 <View style={{ gap: 10, paddingHorizontal: 35 }}>
