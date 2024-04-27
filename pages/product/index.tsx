@@ -16,7 +16,7 @@ export function Product() {
                     text={product.name}
                     style={{ color:'#819601', fontFamily: 'MontserratBold', fontSize: 22 }} 
                 /> 
-                <Stars stars={2} />
+                <Stars stars={product.rating} />
             </Column>
            <RegularText 
             text='MEDIDAS: (C x L x A) - 32 x 24 x 20 cm' 
