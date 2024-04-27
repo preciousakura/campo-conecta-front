@@ -26,8 +26,8 @@ export function Home() {
           <Search style={{ paddingHorizontal: 0 }} props={{ placeholder: 'Buscar' }} />
 
           <RegularText text="Pedidos em aberto" style={{ fontSize: 22, fontFamily: 'MontserratBold', textAlign: 'left', marginBottom: 0,  marginTop: 20 }} />
-          <TagsCarousel style={{ marginVertical: 20 }} titles={['Todos', 'Papel e papelão', 'Vidro', 'Plástico']} />
         </View>
+        <TagsCarousel style={{ marginVertical: 20 }} titles={['Todos', 'Papel e papelão', 'Vidro', 'Plástico']} />
         <Column>
           <CardsCarousel products={productsList}/>
         </Column>

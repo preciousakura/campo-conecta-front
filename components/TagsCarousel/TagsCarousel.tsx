@@ -14,7 +14,7 @@ export function TagsCarousel({ titles, style  }: TagsCarouselProps) {
 
   return (
     <View style={{ ...style }}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 15 }}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 15, paddingHorizontal: 35 }}>
         {titles.map((title, index) => {
           return (
             <FilterItem 
