@@ -26,19 +26,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'white',
         width: '100%',
-        borderStartEndRadius: 70,
+        borderTopEndRadius: 70,
         borderTopStartRadius: 70,
     },
     content: {
         marginTop: 40,
-        paddingHorizontal: 45,
+        paddingHorizontal: 35,
         zIndex: 1
     },
     square: {
         width: "100%",
         height: "100%",
         backgroundColor: '#E9A318',
-        borderStartEndRadius: 70,
+        borderTopEndRadius: 70,
         borderTopStartRadius: 70,
         position: 'absolute', 
         top: '55%', 
