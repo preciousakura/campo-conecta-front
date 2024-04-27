@@ -1,3 +1,6 @@
 export { InputText } from './Form'
 export { RegularText } from './Text'
-export { Button } from './Button'
+export { Button, BackButton } from './Button'
+export { Content } from './Content'
+export { Column } from './Column'
+export { Stars } from './Stars'

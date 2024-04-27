@@ -1,5 +1,5 @@
 import { NativeStackNavigationProp, createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Login, Register } from "../pages";
+import { Login, Payment, Register } from "../pages";
 
 type AccountParamList = {
     Login: undefined;
@@ -15,7 +15,7 @@ export default function AccountNavigator() {
     <Account.Navigator initialRouteName="Login">
       <Account.Screen
         name="Login"
-        component={Login}
+        component={Payment}
         options={{ headerShown: false }}
       />
       <Account.Screen

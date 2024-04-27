@@ -99,7 +99,6 @@ export function Form() {
         )}/>
 
       <Button 
-      
         props={{
           title: 'Cadastrar',
           onPress: handleSubmit(onSubmit)

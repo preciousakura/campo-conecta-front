@@ -20,7 +20,7 @@ export function Button({ title, titleStyle, buttonStyle, props, isLoading = fals
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#E8B44B',
+    backgroundColor: '#EBA416',
     borderRadius: 12,
     padding: 15,
   },

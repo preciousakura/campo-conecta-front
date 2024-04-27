@@ -12,7 +12,6 @@ export function Login() {
         resizeMode='contain'
       />
       <Form />
-      <View style={styles.circle}></View>
     </View>
   );
 }
@@ -20,17 +19,8 @@ export function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#8F9F2C',
+    backgroundColor: '#819601',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  circle: {
-    width: 560,
-    height: 560,
-    backgroundColor: '#AAB438',
-    borderRadius: 1000, 
-    position: 'absolute', 
-    top: '68%', 
-    zIndex: -1
-  },
+  }
 });
