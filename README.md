@@ -7,4 +7,11 @@ Nosso sertão é distante e de acesso precário, isso gera inúmeros desafios lo
 Nós conectamos produtores e fornecedores, como um coliving do agro, onde o produtor pode adquirir produtos com os fornecedores através de remessas, otimizando os custos com fretes e fazendo pedidos em maiores quantidades.
 
 >Equipe: [Andreza Leal](https://github.com/andrezaleal), Ântonio Cléssio, [Breno Macêdo](https://github.com/brenomacedo), [Isabel Cristina](https://github.com/preciousakura) e [João Victor](https://github.com/jvsampaios)
-  
+
+## Screenshots
+![alt text](https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic1.jpeg)
+![alt text](https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic2.jpeg)
+![alt text](https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic3.jpeg)
+![alt text](https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic4.jpeg)
+![alt text](https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic5.jpeg)
+![alt text](https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic6.jpeg)
