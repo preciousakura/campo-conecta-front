@@ -10,12 +10,12 @@ Nós conectamos produtores e fornecedores, como um coliving do agro, onde o prod
 
 ## Screenshots
 <p align="center" width="100%">
-    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic1.jpeg"> 
-    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic2.jpeg"> 
-    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic3.jpeg"> 
+    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic6.jpeg"> 
+    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic5.jpeg"> 
+    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic4.jpeg"> 
 </p>
 <p align="center" width="100%">
-    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic4.jpeg"> 
-    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic5.jpeg"> 
-    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic6.jpeg"> 
+    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic3.jpeg"> 
+    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic2.jpeg"> 
+    <img width="32%" src="https://raw.githubusercontent.com/preciousakura/campo-conecta-front/assets/pic1.jpeg"> 
 </p>
