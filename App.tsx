@@ -12,6 +12,7 @@ export default function App() {
     'MontserratRegular': require('./assets/fonts/Montserrat-Regular.ttf'),
     'MontserratSemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
     'MontserratBold': require('./assets/fonts/Montserrat-Bold.ttf'),
+    'MontserratExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
