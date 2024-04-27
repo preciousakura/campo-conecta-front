@@ -20,8 +20,8 @@ export function Supplier() {
   return (
     <View style={styles.container}>
         <BackButton title="Fornecedores" />
-        <Content contentStyle={{ marginVertical: 0, paddingHorizontal: 0 }} decoration>
-            <Column style={{ marginTop: 40, paddingHorizontal: 35 }}>
+        <Content contentStyle={{ paddingHorizontal: 0 }} decoration>
+            <Column style={{ paddingHorizontal: 35 }}>
                 <Image 
                     source={require('../../assets/images/empacota-e-vai.png')} 
                     resizeMode='contain'
@@ -81,7 +81,7 @@ export function Supplier() {
                     style={{ color:'#FFF', textAlign: 'justify', fontFamily: 'MontserratBold', fontSize: 15, marginTop: 20, paddingHorizontal: 35 }} 
                 /> 
 
-                <View style={{ gap: 10, marginVertical: 20, paddingHorizontal: 35 }}>
+                <View style={{ gap: 10, paddingHorizontal: 35 }}>
                     {items.map(item => (
                         <ItemProduct key={item.id} product={item}/>
                     ))}

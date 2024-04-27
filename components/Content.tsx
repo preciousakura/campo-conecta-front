@@ -31,11 +31,12 @@ const styles = StyleSheet.create({
         borderTopStartRadius: 70,
     },
     content: {
-        marginVertical: 40,
+        marginTop: 40,
+        marginBottom: 10,
         paddingHorizontal: 35,
         zIndex: 1,
-        borderTopEndRadius: 70, 
-        borderTopStartRadius: 70, 
+        borderTopEndRadius: 70,
+        borderTopStartRadius: 70,
     },
     square: {
         width: "100%",
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
         borderTopEndRadius: 70,
         borderTopStartRadius: 70,
         position: 'absolute', 
-        top: '90%', 
+        top: '70%', 
         zIndex: 0
     },
 })
