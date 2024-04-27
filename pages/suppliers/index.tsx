@@ -2,6 +2,8 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { BackButton, FilterItem, ItemSupplier, ProductCard, RegularText, Search } from '../../components';
 import { useState } from 'react';
 import { Supplier } from '../../types/supplier';
+import { RouteProp, useRoute } from '@react-navigation/native';
+import { OrderParamList } from '../../routes/order';
 
 const items: Supplier[] = [
     {
@@ -25,13 +27,18 @@ const items: Supplier[] = [
   ];
 
 export function Suppliers() {
+  const route = useRoute<RouteProp<OrderParamList, 'Suppliers'>>();
+  const { title } = route.params;
+  
   const [frequency, setFrenquency] = useState('Todos');
 
   return (
     <View style={styles.container}>
-      <BackButton title="Embalagens" />
+      <BackButton title={title} />
       <RegularText text="Fornecedores" style={{ fontSize: 22, fontFamily: 'MontserratBold', textAlign: 'left', paddingHorizontal: 35, marginBottom: 20 }} />
-      <Search props={{ placeholder: 'Buscar' }} />
+      <View style={{ paddingHorizontal: 35 }}>
+        <Search props={{ placeholder: 'Buscar' }} />
+      </View>
       <View style={{ flexDirection: 'row', width: '100%', gap: 6, paddingHorizontal: 35, paddingVertical: 20 }}>
           <FilterItem isSelected={frequency == 'Todos'} title='Todos' onPress={() => setFrenquency('Todos')} />
           <FilterItem isSelected={frequency == 'Papelão'} title='Papelão' onPress={() => setFrenquency('Papelão')} />

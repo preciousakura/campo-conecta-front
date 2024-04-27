@@ -109,5 +109,5 @@ const styles = StyleSheet.create({
     position: 'absolute', 
     top: "10%", 
     zIndex: -1
-},
+  },
 });

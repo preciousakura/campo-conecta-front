@@ -1,9 +1,9 @@
 import { NativeStackNavigationProp, createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Login, Register } from "../pages";
+import { Login, Register, Home } from "../pages";
 
 type AccountParamList = {
-    Login: undefined;
-    Register: undefined;
+  Login: undefined;
+  Register: undefined;
 }
 
 export type AccountProps = NativeStackNavigationProp<AccountParamList>;

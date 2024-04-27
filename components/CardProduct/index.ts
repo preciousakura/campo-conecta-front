@@ -1,0 +1,1 @@
+export { CardProduct, CardProductProps } from './CardProduct'

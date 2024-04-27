@@ -8,7 +8,7 @@ type ColumnProps = {
 
 export function Column({ children, style }: ColumnProps) {
     return (
-        <View style={{ ...style, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', ...style }}>
             {children}
         </View>
     )

@@ -8,7 +8,9 @@ export function MyOrders() {
   return (
     <View style={styles.container}>
         <BackButton title="Meus pedidos" />
-        <Search props={{ placeholder: 'Pesquisar todos os pedidos' }} />
+        <View style={{ paddingHorizontal: 35 }}>
+          <Search props={{ placeholder: 'Pesquisar todos os pedidos' }} />
+        </View>
         <View style={{ flexDirection: 'row', width: '100%', gap: 6, paddingHorizontal: 35, paddingVertical: 20 }}>
             <FilterItem isSelected={frequency == 'Todos'} title='Todos' onPress={() => setFrenquency('Todos')} />
             <FilterItem isSelected={frequency == '3 meses'} title='3 meses' onPress={() => setFrenquency('3 meses')} />

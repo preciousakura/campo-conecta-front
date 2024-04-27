@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     position: 'relative',
-    paddingHorizontal: 35
   },
   input: {
     fontFamily: 'MontserratSemiBold',
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
     color: '#8E8E8E',
     position: 'absolute',
     zIndex: 1,
-    left: 50,
+    left: 18,
     top: 18
   }
 });

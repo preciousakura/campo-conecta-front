@@ -6,9 +6,10 @@ type ContentProps = {
     style?: ViewStyle;
     contentStyle?: ViewStyle;
     decoration?: boolean;
+    childScreen?: string;
 }
 
-export function Content({ children, style, decoration = false, contentStyle }: ContentProps) {
+export function Content({ children, style, decoration = false, contentStyle, childScreen }: ContentProps) {
     return (
        <View style={{...styles.container, ...style, }}>
             <SafeAreaView style={{ width: '100%', zIndex: 10, flex: 1 }}>
@@ -18,20 +19,20 @@ export function Content({ children, style, decoration = false, contentStyle }: C
                     </View>
                 </ScrollView>
             </SafeAreaView>
-            {decoration && <View style={styles.square}></View>}
+            {decoration && <View style={childScreen == 'home' ? styles.cicle : styles.square}></View>}
        </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 6,
-        alignItems: 'center',
+        flex: 1,
         backgroundColor: 'white',
-        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
         borderTopEndRadius: 70,
         borderTopStartRadius: 70,
-    },
+      },
     content: {
         marginBottom: 10,
         paddingHorizontal: 35,
@@ -47,6 +48,16 @@ const styles = StyleSheet.create({
         borderTopStartRadius: 70,
         position: 'absolute', 
         top: '70%', 
+        zIndex: 0
+    },
+    cicle: {
+        width: "100%",
+        height: "100%",
+        backgroundColor: '#FFFFFF',
+        borderTopEndRadius: 50,
+        borderTopStartRadius: 50,
+        position: 'absolute', 
+        top: '65%', 
         zIndex: 0
     },
 })

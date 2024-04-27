@@ -14,13 +14,13 @@ export default function Routes() {
                 options={{ headerShown: false }}
             />
             <Navigation.Screen
-                name="User"
-                component={UserNavigator}
+                name="Account"
+                component={AccountNavigator}
                 options={{ headerShown: false }}
             />
             <Navigation.Screen
-                name="Account"
-                component={AccountNavigator}
+                name="User"
+                component={UserNavigator}
                 options={{ headerShown: false }}
             />
         </Navigation.Navigator>
