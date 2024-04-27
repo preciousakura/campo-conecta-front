@@ -5,3 +5,5 @@ export { Content } from './Content'
 export { Column } from './Column'
 export { Stars } from './Stars'
 export { ItemProduct } from './ItemProduct'
+export { Search } from './Search';
+export { FilterItem } from './FilterItem'
